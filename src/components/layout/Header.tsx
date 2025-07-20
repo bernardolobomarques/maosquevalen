@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart, Phone, ChevronDown } from 'lucide-react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo-vector.png';
 import './Header.css';
 
 const Header: React.FC = () => {

@@ -228,7 +228,6 @@
   width: 40px;
   object-fit: contain;
   border-radius: 6px;
-  filter: brightness(0) invert(1);
 }
 
 .mobile-logo span {

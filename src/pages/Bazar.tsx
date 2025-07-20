@@ -122,7 +122,7 @@ const Bazar: React.FC = () => {
                 <MapPin size={32} />
               </div>
               <h3>Localização</h3>
-              <p>Rua das Flores, 123<br />Centro - São Paulo/SP</p>
+              <p>Rua Francisco Naldony 238 e 220<br />Campina do Siqueira - Curitiba/PR</p>
               <button className="btn btn-outline">Ver no Mapa</button>
             </div>
 
@@ -132,9 +132,7 @@ const Bazar: React.FC = () => {
               </div>
               <h3>Horário de Funcionamento</h3>
               <div className="schedule">
-                <p><strong>Terça a Sexta:</strong> 9h às 17h</p>
-                <p><strong>Sábado:</strong> 9h às 15h</p>
-                <p><strong>Domingo e Segunda:</strong> Fechado</p>
+                <p><strong>Segunda a Sexta:</strong> 9:30 às 17h</p>
               </div>
             </div>
 
@@ -143,10 +141,11 @@ const Bazar: React.FC = () => {
                 <Phone size={32} />
               </div>
               <h3>Contato</h3>
-              <p>WhatsApp: (11) 99999-9999</p>
+              <p>WhatsApp: +55 41 99153-6163</p>
+              <p>Telefone: +55 41 3209-9004</p>
               <p>Instagram: @bazarmaosquevalen</p>
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/5541991536163" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-primary"

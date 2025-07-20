@@ -59,9 +59,10 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="method-content">
                     <h3>Telefone/WhatsApp</h3>
-                    <p>(11) 99999-9999</p>
+                    <p>+55 41 99153-6163</p>
+                    <p>+55 41 3209-9004</p>
                     <a 
-                      href="https://wa.me/5511999999999" 
+                      href="https://wa.me/5541991536163" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="btn btn-outline btn-sm"
@@ -78,9 +79,9 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="method-content">
                     <h3>E-mail</h3>
-                    <p>contato@maosquevalen.org</p>
+                    <p>maosquevalen@yahoo.com</p>
                     <a 
-                      href="mailto:contato@maosquevalen.org"
+                      href="mailto:maosquevalen@yahoo.com"
                       className="btn btn-outline btn-sm"
                     >
                       Enviar E-mail
@@ -94,7 +95,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="method-content">
                     <h3>Endereço</h3>
-                    <p>Rua das Flores, 123<br />Centro - São Paulo/SP<br />CEP: 01234-567</p>
+                    <p>Rua Francisco Naldony 238 e 220<br />Campina do Siqueira - Curitiba/PR<br />CEP: 80740-030</p>
                     <button className="btn btn-outline btn-sm">
                       Ver no Mapa
                     </button>
@@ -107,7 +108,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="method-content">
                     <h3>Horário de Atendimento</h3>
-                    <p>Segunda a Sexta: 9h às 17h<br />Sábado: 9h às 12h</p>
+                    <p>Segunda a Sexta: 9:30 às 17h</p>
                   </div>
                 </div>
               </div>
@@ -215,7 +216,7 @@ const Contact: React.FC = () => {
           <div className="map-placeholder">
             <MapPin size={48} />
             <h3>Nossa Localização</h3>
-            <p>Rua das Flores, 123 - Centro, São Paulo/SP</p>
+            <p>Rua Francisco Naldony 238 e 220 - Campina do Siqueira, Curitiba/PR</p>
             <button className="btn btn-primary">
               Abrir no Google Maps
             </button>
@@ -245,7 +246,7 @@ const Contact: React.FC = () => {
 
               <div className="faq-item">
                 <h3>Onde fica o Bazar Mãos que Valen?</h3>
-                <p>O bazar fica na Rua das Flores, 123 - Centro. Funcionamos de terça a sábado. Siga @bazarmaosquevalen no Instagram.</p>
+                <p>O bazar fica na Rua Francisco Naldony 238 e 220 - Campina do Siqueira, Curitiba/PR. Funcionamos de segunda a sexta, das 9:30 às 17h. Siga @bazarmaosquevalen no Instagram.</p>
               </div>
 
               <div className="faq-item">

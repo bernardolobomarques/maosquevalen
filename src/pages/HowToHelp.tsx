@@ -19,12 +19,12 @@ const HowToHelp: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const donationAmounts = [25, 50, 100, 200];
-  const pixKey = "pix@maosquevalen.org";
-  const pixCnpj = "12.345.678/0001-90"; // CNPJ fictício
+  const pixKey = "39.341.418.0001-06";
+  const pixCnpj = "39.341.418/0001-06";
   const bankInfo = {
-    bank: "Banco do Brasil",
-    agency: "1234-5",
-    account: "12345-6",
+    bank: "Sicredi",
+    agency: "0730",
+    account: "39839-3",
     accountType: "Conta Corrente"
   };
 
@@ -144,7 +144,7 @@ const HowToHelp: React.FC = () => {
                     <p><strong>Conta:</strong> {bankInfo.account}</p>
                     <p><strong>Tipo:</strong> {bankInfo.accountType}</p>
                     <p><strong>CNPJ:</strong> {pixCnpj}</p>
-                    <p><strong>Favorecido:</strong> ONG Mãos que Valen</p>
+                    <p><strong>Favorecido:</strong> Associação Filantrópica Mãos que Valen</p>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo-vector.png';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -64,15 +64,15 @@ const Footer: React.FC = () => {
             <div className="footer-contact">
               <div className="contact-item">
                 <Mail size={16} />
-                <span>contato@maosquevalen.org</span>
+                <span>maosquevalen@yahoo.com</span>
               </div>
               <div className="contact-item">
                 <Phone size={16} />
-                <span>(11) 99999-9999</span>
+                <span>+55 41 99153-6163</span>
               </div>
               <div className="contact-item">
                 <MapPin size={16} />
-                <span>São Paulo, SP</span>
+                <span>Curitiba, PR</span>
               </div>
             </div>
             <Link to="/como-ajudar" className="btn btn-secondary footer-cta">
