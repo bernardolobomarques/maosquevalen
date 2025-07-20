@@ -87,7 +87,17 @@ const Footer: React.FC = () => {
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} Mãos que Valen. Todos os direitos reservados.</p>
             <div className="footer-bottom-links">
-              <Link to="/contato">Política de Privacidade</Link>
+              <p>
+                Site desenvolvido por{' '}
+                <a 
+                  href="https://www.linkedin.com/in/bernardo-lobo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="developer-link"
+                >
+                  Bernardo Lobo Marques
+                </a>
+              </p>
             </div>
           </div>
         </div>

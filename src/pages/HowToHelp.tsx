@@ -1,213 +1,140 @@
 import React, { useState } from 'react';
-import { 
-  Heart, 
-  Users, 
-  Gift, 
-  Share2, 
-  Building, 
-  CheckCircle,
-  Copy,
-  ArrowRight
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Heart, Users, HandHeart, Gift, Copy, Check, CreditCard, Building, DollarSign } from 'lucide-react';
 import './HowToHelp.css';
 
 const HowToHelp: React.FC = () => {
-  const [selectedDonation, setSelectedDonation] = useState<number | null>(null);
-  const [customAmount, setCustomAmount] = useState('');
-  const [donationType, setDonationType] = useState<'unica' | 'mensal'>('unica');
-  const [copied, setCopied] = useState(false);
+  const [copiedPix, setCopiedPix] = useState(false);
 
-  const donationAmounts = [25, 50, 100, 200];
-  const pixKey = "39.341.418.0001-06";
-  const pixCnpj = "39.341.418/0001-06";
-  const bankInfo = {
-    bank: "Sicredi",
-    agency: "0730",
-    account: "39839-3",
-    accountType: "Conta Corrente"
-  };
-
-  const handleCopyPix = () => {
+  const copyPixKey = () => {
+    const pixKey = "39.341.418/0001-06";
     navigator.clipboard.writeText(pixKey);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedPix(true);
+    setTimeout(() => setCopiedPix(false), 2000);
   };
-
-  const volunteerBenefits = [
-    "Experiência em projetos sociais",
-    "Certificado de participação",
-    "Networking com pessoas engajadas",
-    "Desenvolvimento pessoal",
-    "Impacto direto na comunidade"
-  ];
-
-  const materialDonations = [
-    { category: "Alimentos", items: ["Cestas básicas", "Leite em pó", "Açúcar", "Óleo", "Arroz", "Feijão"] },
-    { category: "Roupas", items: ["Roupas infantis", "Roupas adultas", "Calçados", "Cobertores", "Agasalhos"] },
-    { category: "Escolar", items: ["Cadernos", "Lápis", "Canetas", "Material didático", "Mochilas", "Livros"] },
-    { category: "Higiene", items: ["Sabonete", "Pasta de dente", "Xampu", "Fraldas", "Absorventes"] }
-  ];
 
   return (
-    <div className="how-to-help-page">
+    <div className="help-page">
       {/* Hero Section */}
       <section className="help-hero">
         <div className="container">
           <div className="help-hero-content">
-            <h1>Como Você Pode Ajudar</h1>
+            <h1>Como Ajudar</h1>
             <p>
-              Existem diversas formas de contribuir com nossa missão. 
-              Escolha a que mais combina com você e faça parte dessa transformação.
+              Sua contribuição pode transformar vidas. Conheça as diferentes formas 
+              de fazer parte da nossa missão e ajudar quem mais precisa.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Doações Financeiras */}
+      {/* Doação Section */}
       <section className="section">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Doações Financeiras</h2>
-            <p>Sua doação nos ajuda a manter e expandir nossos projetos sociais</p>
+            <h2>Formas de Doação</h2>
+            <p>Escolha a forma mais conveniente para você contribuir</p>
           </div>
 
           <div className="donation-section">
-            <div className="donation-form">
-              <div className="donation-type-selector">
+            {/* PIX Section */}
+            <div className="pix-section">
+              <h3>
+                <CreditCard size={24} />
+                Doação via PIX
+              </h3>
+              <p>A forma mais rápida e prática de ajudar</p>
+              
+              <div className="pix-container">
+                <div className="pix-label">CNPJ</div>
+                <div className="pix-key">39.341.418/0001-06</div>
                 <button 
-                  className={`type-btn ${donationType === 'unica' ? 'active' : ''}`}
-                  onClick={() => setDonationType('unica')}
+                  className={`copy-btn ${copiedPix ? 'copied' : ''}`}
+                  onClick={copyPixKey}
                 >
-                  Doação Única
-                </button>
-                <button 
-                  className={`type-btn ${donationType === 'mensal' ? 'active' : ''}`}
-                  onClick={() => setDonationType('mensal')}
-                >
-                  Doação Mensal
+                  {copiedPix ? <Check size={16} /> : <Copy size={16} />}
+                  {copiedPix ? 'Copiado!' : 'Copiar Chave'}
                 </button>
               </div>
 
-              <div className="amount-selector">
-                <div className="preset-amounts">
-                  {donationAmounts.map((amount) => (
-                    <button
-                      key={amount}
-                      className={`amount-btn ${selectedDonation === amount ? 'active' : ''}`}
-                      onClick={() => {
-                        setSelectedDonation(amount);
-                        setCustomAmount('');
-                      }}
-                    >
-                      R$ {amount}
-                    </button>
-                  ))}
-                </div>
-                <div className="custom-amount">
-                  <input
-                    type="number"
-                    placeholder="Outro valor"
-                    value={customAmount}
-                    onChange={(e) => {
-                      setCustomAmount(e.target.value);
-                      setSelectedDonation(null);
-                    }}
-                    min="1"
-                  />
-                </div>
-              </div>
-
-              <div className="donation-impact">
-                {selectedDonation === 25 && (
-                  <p>Com R$ 25 você ajuda a alimentar uma família por 3 dias</p>
-                )}
-                {selectedDonation === 50 && (
-                  <p>Com R$ 50 você garante material escolar para uma criança</p>
-                )}
-                {selectedDonation === 100 && (
-                  <p>Com R$ 100 você patrocina uma cesta básica completa</p>
-                )}
-                {selectedDonation === 200 && (
-                  <p>Com R$ 200 você sustenta um projeto por uma semana</p>
-                )}
-              </div>
-
-              <div className="donation-info">
-                <h4>💰 Como Fazer sua Doação</h4>
-                <p>Para fazer sua doação, utilize os dados bancários abaixo ou o PIX ao lado:</p>
-                <div className="bank-info">
-                  <h5>Dados Bancários</h5>
-                  <div className="bank-details">
-                    <p><strong>Banco:</strong> {bankInfo.bank}</p>
-                    <p><strong>Agência:</strong> {bankInfo.agency}</p>
-                    <p><strong>Conta:</strong> {bankInfo.account}</p>
-                    <p><strong>Tipo:</strong> {bankInfo.accountType}</p>
-                    <p><strong>CNPJ:</strong> {pixCnpj}</p>
-                    <p><strong>Favorecido:</strong> Associação Filantrópica Mãos que Valen</p>
-                  </div>
-                </div>
+              <div className="pix-instructions">
+                💡 Abra seu app do banco, escolha PIX e cole a chave CNPJ acima
               </div>
             </div>
 
-            <div className="pix-section">
-              <h3>Doação via PIX</h3>
-              <p>Forma mais rápida e sem taxas para sua doação chegar até nós</p>
-              <div className="pix-key">
-                <span>{pixKey}</span>
-                <button 
-                  className={`copy-btn ${copied ? 'copied' : ''}`}
-                  onClick={handleCopyPix}
-                >
-                  {copied ? <CheckCircle size={18} /> : <Copy size={18} />}
-                  {copied ? 'Copiado!' : 'Copiar'}
-                </button>
-              </div>
-              <div className="qr-code">
-                <img src="/api/placeholder/200/200" alt="QR Code PIX" />
-                <p>Escaneie o QR Code com seu app do banco</p>
+            {/* Informações Bancárias */}
+            <div className="donation-info">
+              <h4>
+                <Building size={24} />
+                Transferência Bancária
+              </h4>
+              <p>Para doações via transferência bancária tradicional</p>
+              
+              <div className="bank-info">
+                <div className="bank-details">
+                  <div className="bank-item">
+                    <strong>Banco:</strong>
+                    <span>Sicredi</span>
+                  </div>
+                  <div className="bank-item">
+                    <strong>Agência:</strong>
+                    <span>0730</span>
+                  </div>
+                  <div className="bank-item">
+                    <strong>Conta:</strong>
+                    <span>39839-3</span>
+                  </div>
+                  <div className="bank-item">
+                    <strong>Favorecido:</strong>
+                    <span>Associação Filantrópica Mãos que Valen</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Voluntariado */}
-      <section id="voluntario" className="section section-alt">
+      {/* Volunteer Section */}
+      <section className="section section-alt">
         <div className="container">
           <div className="volunteer-section">
             <div className="volunteer-content">
-              <h2>Seja um Voluntário</h2>
+              <h2>
+                <Users size={32} />
+                Seja Voluntário
+              </h2>
               <p>
-                Doe seu tempo e habilidades para ajudar diretamente em nossos projetos. 
-                O voluntariado é uma das formas mais gratificantes de fazer a diferença.
+                Doe seu tempo e talento para fazer a diferença na vida de pessoas em situação de vulnerabilidade. 
+                Temos diversas oportunidades que se adequam ao seu perfil e disponibilidade.
               </p>
 
               <div className="volunteer-opportunities">
                 <h3>Oportunidades de Voluntariado</h3>
                 <ul>
-                  <li>Distribuição de alimentos</li>
-                  <li>Apoio educacional para crianças</li>
-                  <li>Organização de eventos</li>
-                  <li>Gestão do bazar</li>
+                  <li>Atendimento e acolhimento no bazar</li>
+                  <li>Organização e triagem de doações</li>
+                  <li>Apoio em eventos e campanhas</li>
+                  <li>Atividades educativas e oficinas</li>
+                  <li>Suporte administrativo</li>
                   <li>Marketing e comunicação</li>
-                  <li>Captação de recursos</li>
                 </ul>
               </div>
 
               <div className="volunteer-benefits">
-                <h3>Benefícios do Voluntariado</h3>
+                <h3>Como Voluntário, Você</h3>
                 <ul>
-                  {volunteerBenefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
-                  ))}
+                  <li>Faz parte de uma causa transformadora</li>
+                  <li>Desenvolve novas habilidades</li>
+                  <li>Conhece pessoas incríveis</li>
+                  <li>Recebe certificado de participação</li>
+                  <li>Participa de capacitações</li>
                 </ul>
               </div>
 
-              <Link to="/contato" className="btn btn-primary">
+              <a href="https://wa.me/5541991536163?text=Olá! Gostaria de ser voluntário na Associação Filantrópica Mãos que Valen. Podemos conversar?" className="btn btn-primary">
+                <HandHeart size={20} />
                 Quero ser Voluntário
-                <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
 
             <div className="volunteer-image">
@@ -217,86 +144,120 @@ const HowToHelp: React.FC = () => {
         </div>
       </section>
 
-      {/* Doações Materiais */}
-      <section id="materiais" className="section">
+      {/* Materials Section */}
+      <section className="section">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Doações de Materiais</h2>
-            <p>Doe itens que podem fazer a diferença na vida de quem precisa</p>
+            <h2>
+              <Gift size={32} />
+              Doação de Materiais
+            </h2>
+            <p>Sua doação de materiais ajuda a sustentar nossos projetos</p>
           </div>
 
           <div className="materials-grid">
-            {materialDonations.map((category, index) => (
-              <div key={index} className="material-card">
-                <h3>{category.category}</h3>
-                <ul>
-                  {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="material-card">
+              <h3>Roupas e Calçados</h3>
+              <ul>
+                <li>Roupas em bom estado</li>
+                <li>Calçados limpos</li>
+                <li>Acessórios</li>
+                <li>Roupas de cama</li>
+                <li>Toalhas</li>
+              </ul>
+            </div>
+
+            <div className="material-card">
+              <h3>Alimentos Não-Perecíveis</h3>
+              <ul>
+                <li>Arroz, feijão, macarrão</li>
+                <li>Óleo, açúcar, sal</li>
+                <li>Enlatados</li>
+                <li>Leite em pó</li>
+                <li>Produtos de higiene</li>
+              </ul>
+            </div>
+
+            <div className="material-card">
+              <h3>Móveis e Eletrodomésticos</h3>
+              <ul>
+                <li>Móveis em bom estado</li>
+                <li>Eletrodomésticos funcionando</li>
+                <li>Utensílios domésticos</li>
+                <li>Livros e materiais escolares</li>
+                <li>Brinquedos</li>
+              </ul>
+            </div>
+
+            <div className="material-card">
+              <h3>Material de Limpeza</h3>
+              <ul>
+                <li>Produtos de limpeza</li>
+                <li>Sabão em pó</li>
+                <li>Detergente</li>
+                <li>Desinfetante</li>
+                <li>Papel higiênico</li>
+              </ul>
+            </div>
           </div>
 
           <div className="donation-info">
             <div className="info-card">
-              <h3>Como Doar</h3>
+              <h3>Como Doar Materiais</h3>
               <ol>
                 <li>Entre em contato conosco pelo WhatsApp</li>
-                <li>Informe os itens que deseja doar</li>
-                <li>Agendamos a coleta ou entrega</li>
-                <li>Sua doação é distribuída para quem precisa</li>
+                <li>Informe que tipo de material deseja doar</li>
+                <li>Agendamos a coleta ou você traz no bazar</li>
+                <li>Emitimos comprovante de doação</li>
               </ol>
-              <a 
-                href="https://wa.me/5511999999999" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-              >
-                WhatsApp (11) 99999-9999
+              <a href="https://wa.me/5541991536163?text=Olá! Gostaria de agendar uma doação de materiais para a Associação Filantrópica Mãos que Valen." className="btn btn-primary">
+                <HandHeart size={20} />
+                Agendar Doação
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Compre no Bazar */}
+      {/* Bazar Section */}
       <section className="section section-alt">
         <div className="container">
           <div className="bazar-section">
             <div className="bazar-content">
-              <h2>Compre no Bazar Mãos que Valen</h2>
+              <h2>
+                <DollarSign size={32} />
+                Bazar Mãos que Valen
+              </h2>
               <p>
-                Encontre roupas, livros e objetos de qualidade com preços acessíveis. 
-                Toda a renda do bazar é revertida para nossos projetos sociais.
+                Visite nosso bazar e encontre peças únicas por preços acessíveis. 
+                Toda a renda é revertida para nossos projetos sociais.
               </p>
-              
+
               <div className="bazar-features">
                 <div className="feature">
-                  <Gift size={24} />
-                  <span>Produtos de qualidade</span>
+                  <Heart size={20} />
+                  <span>Roupas e acessórios selecionados</span>
                 </div>
                 <div className="feature">
-                  <Heart size={24} />
-                  <span>Preços acessíveis</span>
+                  <Gift size={20} />
+                  <span>Preços justos e acessíveis</span>
                 </div>
                 <div className="feature">
-                  <Users size={24} />
-                  <span>Renda para projetos</span>
+                  <Users size={20} />
+                  <span>Atendimento humanizado</span>
                 </div>
               </div>
 
               <div className="bazar-info">
                 <h3>Informações do Bazar</h3>
-                <p><strong>Endereço:</strong> Rua das Flores, 123 - Centro</p>
-                <p><strong>Horário:</strong> Ter a Sáb, 9h às 17h</p>
+                <p><strong>Endereço:</strong> Rua Francisco Naldony 238 e 220 - Campina do Siqueira, Curitiba/PR</p>
+                <p><strong>Horário:</strong> Segunda a Sexta, das 9:30 às 17h</p>
                 <p><strong>Instagram:</strong> @bazarmaosquevalen</p>
               </div>
 
-              <Link to="/bazar" className="btn btn-primary">
-                Saber Mais sobre o Bazar
-                <ArrowRight size={18} />
-              </Link>
+              <a href="https://wa.me/5541991536163?text=Olá! Gostaria de informações sobre como chegar ao Bazar Mãos que Valen." className="btn btn-primary">
+                Como Chegar
+              </a>
             </div>
 
             <div className="bazar-image">
@@ -306,37 +267,53 @@ const HowToHelp: React.FC = () => {
         </div>
       </section>
 
-      {/* Divulgação */}
-      <section id="divulgar" className="section">
+      {/* Share Section */}
+      <section className="section">
         <div className="container">
           <div className="share-section">
-            <div className="share-content text-center">
-              <h2>Divulgue Nossa Causa</h2>
+            <div className="share-content">
+              <Heart size={48} />
+              <h2>Compartilhe Nossa Causa</h2>
               <p>
-                Compartilhe nossos projetos nas redes sociais e ajude a amplificar 
-                nosso impacto na comunidade.
+                Ajude-nos a alcançar mais pessoas! Compartilhe nosso trabalho em suas redes sociais 
+                e convide amigos e familiares para fazerem parte desta corrente do bem.
               </p>
 
               <div className="social-share">
-                <button className="share-btn facebook">
-                  <Share2 size={20} />
-                  Compartilhar no Facebook
-                </button>
-                <button className="share-btn instagram">
-                  <Share2 size={20} />
-                  Compartilhar no Instagram
-                </button>
-                <button className="share-btn whatsapp">
-                  <Share2 size={20} />
+                <a 
+                  href="https://www.facebook.com/maosquevalen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="share-btn facebook"
+                >
+                  <Heart size={20} />
+                  Seguir no Facebook
+                </a>
+                <a 
+                  href="https://www.instagram.com/maosquevalen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="share-btn instagram"
+                >
+                  <Heart size={20} />
+                  Seguir no Instagram
+                </a>
+                <a 
+                  href="https://wa.me/?text=Conheça o trabalho incrível da Associação Filantrópica Mãos que Valen! Eles transformam vidas em Curitiba. Saiba mais: https://maosquevalen.org.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="share-btn whatsapp"
+                >
+                  <Heart size={20} />
                   Compartilhar no WhatsApp
-                </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Parcerias Empresariais */}
+      {/* Partnership Section */}
       <section className="section section-alt">
         <div className="container">
           <div className="partnership-section">
@@ -344,29 +321,29 @@ const HowToHelp: React.FC = () => {
               <Building size={48} />
               <h2>Parcerias Empresariais</h2>
               <p>
-                Sua empresa pode fazer parte dessa transformação social. 
-                Oferecemos diferentes modalidades de parceria corporativa.
+                Sua empresa pode fazer parte desta transformação social. Oferecemos diferentes 
+                modalidades de parceria que agregam valor à sua marca e geram impacto positivo.
               </p>
-              
+
               <div className="partnership-types">
                 <div className="type">
                   <h3>Patrocínio de Projetos</h3>
-                  <p>Apoie financeiramente nossos projetos específicos</p>
+                  <p>Apoie projetos específicos e receba relatórios de impacto detalhados.</p>
                 </div>
                 <div className="type">
                   <h3>Voluntariado Corporativo</h3>
-                  <p>Engaje seus colaboradores em ações voluntárias</p>
+                  <p>Engaje seus colaboradores em ações sociais e fortaleça o espírito de equipe.</p>
                 </div>
                 <div className="type">
                   <h3>Doação de Produtos</h3>
-                  <p>Doe produtos da sua empresa para nossas ações</p>
+                  <p>Doe produtos da sua empresa e ajude diretamente as famílias atendidas.</p>
                 </div>
               </div>
 
-              <Link to="/contato" className="btn btn-primary">
-                Quero ser Parceiro
-                <ArrowRight size={18} />
-              </Link>
+              <a href="https://wa.me/5541991536163?text=Olá! Minha empresa gostaria de ser parceira da Associação Filantrópica Mãos que Valen. Podemos conversar sobre as modalidades de parceria?" className="btn btn-primary">
+                <Building size={20} />
+                Seja Nosso Parceiro
+              </a>
             </div>
           </div>
         </div>

@@ -123,7 +123,14 @@ const Bazar: React.FC = () => {
               </div>
               <h3>Localização</h3>
               <p>Rua Francisco Naldony 238 e 220<br />Campina do Siqueira - Curitiba/PR</p>
-              <button className="btn btn-outline">Ver no Mapa</button>
+              <a 
+                href="https://maps.app.goo.gl/Lh83cR8Mk3oVLdju6" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                Ver no Mapa
+              </a>
             </div>
 
             <div className="info-card hours">
@@ -278,7 +285,7 @@ const Bazar: React.FC = () => {
               </div>
 
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/5541991536163" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-secondary btn-lg"
@@ -343,7 +350,7 @@ const Bazar: React.FC = () => {
             </p>
             <div className="cta-actions">
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/5541991536163" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-secondary btn-lg"

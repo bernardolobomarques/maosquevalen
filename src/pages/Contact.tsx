@@ -1,30 +1,8 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from 'lucide-react';
+import React from 'react';
+import { Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
 import './Contact.css';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-    type: 'geral'
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui seria implementada a lógica de envio do formulário
-    console.log('Formulário enviado:', formData);
-    alert('Mensagem enviada com sucesso! Retornaremos em breve.');
-  };
 
   return (
     <div className="contact-page">
@@ -96,9 +74,6 @@ const Contact: React.FC = () => {
                   <div className="method-content">
                     <h3>Endereço</h3>
                     <p>Rua Francisco Naldony 238 e 220<br />Campina do Siqueira - Curitiba/PR<br />CEP: 80740-030</p>
-                    <button className="btn btn-outline btn-sm">
-                      Ver no Mapa
-                    </button>
                   </div>
                 </div>
 
@@ -113,99 +88,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Formulário de Contato */}
-            <div className="contact-form">
-              <h2>Envie sua Mensagem</h2>
-              
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="type">Assunto</label>
-                  <select 
-                    id="type"
-                    name="type" 
-                    value={formData.type}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="geral">Informações Gerais</option>
-                    <option value="voluntario">Quero ser Voluntário</option>
-                    <option value="doacao">Doações</option>
-                    <option value="bazar">Bazar Mãos que Valen</option>
-                    <option value="parceria">Parcerias</option>
-                  </select>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Nome Completo</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="email">E-mail</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">Telefone</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="subject">Título da Mensagem</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Mensagem</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Conte-nos como podemos ajudar você..."
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-lg">
-                  <Send size={20} />
-                  Enviar Mensagem
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </section>
@@ -217,9 +99,14 @@ const Contact: React.FC = () => {
             <MapPin size={48} />
             <h3>Nossa Localização</h3>
             <p>Rua Francisco Naldony 238 e 220 - Campina do Siqueira, Curitiba/PR</p>
-            <button className="btn btn-primary">
+            <a 
+              href="https://maps.app.goo.gl/Lh83cR8Mk3oVLdju6" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
               Abrir no Google Maps
-            </button>
+            </a>
           </div>
         </div>
       </section>
