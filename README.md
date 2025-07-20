@@ -1,17 +1,38 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 # Site da ONG Mãos que Valen
+
+## 🌐 Acesso Online
+O site está disponível em: **https://bernardolobomarques.github.io/maosquevalen/**
 
 ## 📋 Sobre o Projeto
 
 Este é o site oficial da ONG "Mãos que Valen", desenvolvido em React com TypeScript. O site apresenta os projetos sociais da organização, facilita doações e permite que visitantes se tornem voluntários.
+
+## 🚀 Deploy e Hospedagem
+
+Este projeto está configurado para deploy automático no GitHub Pages através do GitHub Actions. A cada push na branch `main`, o site é automaticamente construído e publicado.
+
+### Configurações de Deploy:
+- **Plataforma**: GitHub Pages
+- **Branch de Deploy**: `gh-pages` (criada automaticamente)
+- **Build Tool**: Vite
+- **CI/CD**: GitHub Actions
+- **URL Base**: `/maosquevalen/`
+
+### Scripts Disponíveis:
+```bash
+npm run dev          # Desenvolvimento local
+npm run build        # Build para produção
+npm run preview      # Preview do build local
+npm run deploy       # Deploy manual via gh-pages
+```
+
+## 🛠️ Tecnologias Utilizadas
+- React 19
+- TypeScript
+- Vite
+- React Router DOM (Hash Router para GitHub Pages)
+- CSS3 com design responsivo
+- GitHub Actions para CI/CD
 
 ## 🎨 Design e Identidade Visual
 
