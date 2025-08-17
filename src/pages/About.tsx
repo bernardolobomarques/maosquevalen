@@ -210,7 +210,7 @@ const About = () => {
                 Solicitar Relatórios
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
               <Link to="/como-ajudar">
                 Como Ajudar
               </Link>

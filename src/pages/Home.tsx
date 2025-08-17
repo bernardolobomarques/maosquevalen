@@ -65,7 +65,7 @@ const Home = () => {
                 Fazer Doação
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
               <Link to="/sobre">
                 Conhecer Nossa História
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -237,7 +237,7 @@ const Home = () => {
                 Fazer Doação
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
               <Link to="/como-ajudar">
                 <UserPlus className="mr-2 h-5 w-5" />
                 Ser Voluntário

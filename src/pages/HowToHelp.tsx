@@ -299,7 +299,7 @@ const HowToHelp = () => {
               asChild
               size="lg"
               variant="outline"
-              className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-primary"
+              className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary"
             >
               <a
                 href="https://instagram.com/maosquevalen"
