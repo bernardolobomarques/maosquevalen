@@ -16,11 +16,11 @@ import {
 
 const Home = () => {
   const impactNumbers = [
-    { icon: Utensils, number: "9.000", description: "Refeições distribuídas", color: "text-primary" },
-    { icon: Utensils, number: "72.000", description: "Sanduíches distribuídos", color: "text-secondary" },
-    { icon: Clock, number: "120", description: "Dias de trabalho voluntário", color: "text-primary" },
-    { icon: DollarSign, number: "R$ 72.000", description: "Gastos com tratamentos", color: "text-secondary" },
-    { icon: Users, number: "19 mil", description: "Crianças e familiares atendidos", color: "text-primary" },
+    { icon: Utensils, number: "+9.000", description: "Refeições distribuídas", color: "text-primary" },
+    { icon: Utensils, number: "+72.000", description: "Sanduíches distribuídos", color: "text-secondary" },
+    { icon: Clock, number: "+120", description: "Dias de trabalho voluntário", color: "text-primary" },
+    { icon: DollarSign, number: "+R$ 72.000", description: "Gastos com tratamentos", color: "text-secondary" },
+    { icon: Users, number: "+19 mil", description: "Crianças e familiares atendidos", color: "text-primary" },
   ];
 
   const projects = [
@@ -65,7 +65,7 @@ const Home = () => {
                 Fazer Doação
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
+            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary">
               <Link to="/sobre">
                 Conhecer Nossa História
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -80,7 +80,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Nosso Impacto no Primeiro Semestre
+              Nosso Impacto no Primeiro Semestre de 2025
             </h2>
             <p className="font-open-sans text-lg text-muted-foreground max-w-2xl mx-auto">
               Números que refletem o amor e dedicação de nossa comunidade
@@ -194,7 +194,7 @@ const Home = () => {
                 <p><strong>Instagram:</strong> @bazarmaosquevalen</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
+                <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary">
                   <Link to="/bazar">
                     Conhecer o Bazar
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -237,7 +237,7 @@ const Home = () => {
                 Fazer Doação
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary">
+            <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary">
               <Link to="/como-ajudar">
                 <UserPlus className="mr-2 h-5 w-5" />
                 Ser Voluntário

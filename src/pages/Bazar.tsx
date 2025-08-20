@@ -248,7 +248,7 @@ const Bazar = () => {
               asChild
               size="lg"
               variant="outline"
-              className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary"
+              className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary"
             >
               <a
                 href="https://instagram.com/bazarmaosquevalen"
@@ -289,7 +289,7 @@ const Bazar = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="font-open-sans font-semibold border-white text-white hover:bg-white hover:text-secondary"
+                className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary"
               >
                 <a href="/contato">
                   <MapPin className="mr-2 h-5 w-5" />
