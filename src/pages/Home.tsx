@@ -47,19 +47,19 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-white py-16 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/90"></div>
+      <section className="relative bg-white py-16 lg:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="text-center lg:text-left">
-              <h1 className="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
+              <h1 className="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight text-foreground">
                 Transformando Vidas com
-                <span className="block text-secondary-light mt-2">Amor e Solidariedade</span>
+                <span className="block text-secondary mt-2">Amor e Solidariedade</span>
               </h1>
-              <p className="font-open-sans text-lg md:text-xl mb-8 opacity-95 leading-relaxed">
+              <p className="font-open-sans text-lg md:text-xl mb-8 text-muted-foreground leading-relaxed">
                 Oferecemos atendimento com ajuda médica, terapêutica e alimentação para 
-                <strong className="text-secondary-light"> 3 mil crianças</strong> com múltiplas deficiências em Curitiba e Região Metropolitana.
+                <strong className="text-secondary"> 3 mil crianças</strong> com múltiplas deficiências em Curitiba e Região Metropolitana.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" variant="secondary" className="font-open-sans font-semibold shadow-strong">
@@ -68,7 +68,7 @@ const Home = () => {
                     Fazer Doação
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold border-white text-white bg-transparent hover:bg-white hover:text-secondary">
+                <Button asChild size="lg" variant="outline" className="font-open-sans font-semibold">
                   <Link to="/sobre">
                     Conhecer Nossa História
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -79,7 +79,7 @@ const Home = () => {
             
             {/* Logo */}
             <div className="flex justify-center lg:justify-end">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl">
+              <div className="bg-primary/5 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-soft border border-primary/10">
                 <img 
                   src="/lovable-uploads/logo-sem-fundo.png" 
                   alt="Logo Mãos que Valen - Transformando vidas com amor e solidariedade"
