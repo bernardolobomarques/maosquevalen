@@ -51,8 +51,19 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Logo */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <div className="bg-primary/5 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-soft border border-primary/10">
+                <img 
+                  src="/lovable-uploads/logo-sem-fundo.png" 
+                  alt="Logo Mãos que Valen - Transformando vidas com amor e solidariedade"
+                  className="w-64 h-64 lg:w-80 lg:h-80 object-contain"
+                />
+              </div>
+            </div>
+            
             {/* Content */}
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left order-1 lg:order-2">
               <h1 className="font-montserrat font-bold text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight text-foreground">
                 Transformando Vidas com
                 <span className="block text-secondary mt-2">Amor e Solidariedade</span>
@@ -74,17 +85,6 @@ const Home = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-              </div>
-            </div>
-            
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="bg-primary/5 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-soft border border-primary/10">
-                <img 
-                  src="/lovable-uploads/logo-sem-fundo.png" 
-                  alt="Logo Mãos que Valen - Transformando vidas com amor e solidariedade"
-                  className="w-64 h-64 lg:w-80 lg:h-80 object-contain"
-                />
               </div>
             </div>
           </div>
