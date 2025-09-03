@@ -150,7 +150,7 @@ const Home = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/bc0be241-e80d-4bdb-a0e3-1a4f375736cc.png" 
+                src="/lovable-uploads/logo-sem-fundo.png" 
                 alt="Logo Mãos que Valen - Mãos protegendo com amor"
                 className="max-w-md w-full h-auto rounded-lg shadow-soft"
               />
